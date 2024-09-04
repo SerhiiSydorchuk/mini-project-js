@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+   box-sizing: border-box;
+}
+#users-wrap {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 50px;
+
+ }
+ .user {
+     width: 48%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     gap: 20px;
+     border: 2px solid cadetblue;
+     border-radius: 20px;
+     padding: 30px 0;
+     background: #d4dfe1;
+ }
+ .btn-user-info {
+     background: rgb(135, 221, 209);
+     border: 1px solid rgb(6, 78, 74);
+     border-radius: 12px;
+     font-size: 16px;
+     padding: 15px 30px;
+ }
+ h2 {
+     font-size: 2em;
+ }
