@@ -6,24 +6,19 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        .divPost {
-            display: none;
-        }
-        .block {
-            display: block;
-        }
-        #post-title {
-            height: 50vh;
-        }
-    </style>
+    <link rel="stylesheet" href="user-style.css">
 
 
 </head>
 <body>
-<div id="user-info-wrap"></div>
-<div id="post-title"></div>
-<button id="btn">Show the Title</button>
+<div id="user-wrap">
+    <div id="user-info"></div>
+
+    <div id="titleClick"></div>
+</div>
+<div class="button">
+    <button id="btn">POST OF CURRENT USER</button>
+</div>
 
 
 <!--На странице user-details.html:-->
@@ -32,75 +27,74 @@
 <!--(для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)-->
 <!--6 Каждому посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html, котра має детальну інфу про поточний пост.-->
 
-<script>
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const userId = urlParams.get('id');
-    console.log(userId);
-    const btnPost = document.getElementById('btn');
-    let titleDiv = document.getElementById('post-title');
-    let divUsers = document.getElementById('user-info-wrap');
-
-  async function addUserInfo (idUser){
-      let user = await fetch(`https://jsonplaceholder.typicode.com/users/` + userId)
-          .then(res => res.json())
-          .then( user => {
-              for (const key in user) {
-                  if(typeof user[key]==='object'){
-                      let userItem = user[key];
-                      const ol = document.createElement('ol');
-                      const h3 = document.createElement('h3');
-                      h3.innerText= `${key}`
-                      divUsers.append(h3,ol);
-                      for (const element in userItem) {
-                          if (typeof userItem[element] === 'object') {
-                              const userGeo = userItem[element];
-                              let ul = document.createElement('ul');
-                              let li = document.createElement('li');
-                              li.innerText = `${element}`;
-                              ol.appendChild(li);
-                              divUsers.appendChild (ul);
-                              for (const elementKey in userGeo) {
-                                  const li = document.createElement('li'
-                                  )
-                                  li.innerText= `${elementKey}:  ${userGeo[elementKey]}`;
-                                  ul.appendChild(li);
-                              }
-                          }else {const li = document.createElement('li');
-                          li.innerText = `${element}: ${userItem[element]}`
-                          ol.appendChild(li);}
-                      }
-                  }else {
-                  const divUser = document.createElement('div')
-                      divUsers.appendChild(divUser);
-                      divUser.innerText = `${key}: ${user[key]}`;}
-              }
-
-          });
-      let titlePost = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`).then(res => res.json())
-          .then(posts => {
-              const btn = document.createElement('button');
-              btn.innerText = 'post of current user';
-              const titleClic = document.createElement('div')
-              titleClic.style.display = 'none'
-              const h3 = document.createElement('h3');
-              titleDiv.append(h3, titleClic);
-              h3.innerText = 'Title';
-                  for (const post of posts) {
-                  const divPost = document.createElement('div')
-                  divPost.classList.add('divPost')
-                  divPost.innerText = `${post.title}`;
-                 titleClic.append(divPost);
-                  }
-          } );
-
-
-
-  }
-
-   addUserInfo(userId);
-
-
+<!--user-details.html - блок з інфою про user зверху сторінки. Кнопка нижчє, на 90% ширини сторінки, по центру.-->
+<script src="user-main.js">
+    //    const urlParams = new URLSearchParams(window.location.search);
+//    const userId = urlParams.get('id');
+//    console.log(userId);
+//    const btnPost = document.getElementById('btn');
+//    let titleDiv = document.getElementById('post-title');
+//    let divUsers = document.getElementById('user-info-wrap');
+//
+//  async function addUserInfo (idUser){
+//      let user = await fetch(`https://jsonplaceholder.typicode.com/users/` + userId)
+//          .then(res => res.json())
+//          .then( user => {
+//              for (const key in user) {
+//                  if(typeof user[key]==='object'){
+//                      let userItem = user[key];
+//                      const ol = document.createElement('ol');
+//                      const h3 = document.createElement('h3');
+//                      h3.innerText= `${key}`
+//                      divUsers.append(h3,ol);
+//                      for (const element in userItem) {
+//                          if (typeof userItem[element] === 'object') {
+//                              const userGeo = userItem[element];
+//                              let ul = document.createElement('ul');
+//                              let li = document.createElement('li');
+//                              li.innerText = `${element}`;
+//                              ol.appendChild(li);
+//                              divUsers.appendChild (ul);
+//                              for (const elementKey in userGeo) {
+//                                  const li = document.createElement('li'
+//                                  )
+//                                  li.innerText= `${elementKey}:  ${userGeo[elementKey]}`;
+//                                  ul.appendChild(li);
+//                              }
+//                          }else {const li = document.createElement('li');
+//                          li.innerText = `${element}: ${userItem[element]}`
+//                          ol.appendChild(li);}
+//                      }
+//                  }else {
+//                  const divUser = document.createElement('div')
+//                      divUsers.appendChild(divUser);
+//                      divUser.innerText = `${key}: ${user[key]}`;}
+//              }
+//
+//          });
+//      let titlePost = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`).then(res => res.json())
+//          .then(posts => {
+//              const btn = document.createElement('button');
+//              btn.innerText = 'post of current user';
+//              const titleClic = document.createElement('div')
+//              titleClic.style.display = 'none'
+//              const h3 = document.createElement('h3');
+//              titleDiv.append(h3, titleClic);
+//              h3.innerText = 'Title';
+//                  for (const post of posts) {
+//                  const divPost = document.createElement('div')
+//                  divPost.classList.add('divPost')
+//                  divPost.innerText = `${post.title}`;
+//                 titleClic.append(divPost);
+//                  }
+//          } );
+//
+//
+//
+//  }
+//
+//   addUserInfo(userId);
 </script>
 
 

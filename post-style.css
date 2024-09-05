@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+body{
+    font-family: "SUSE", sans-serif;
+}
+.post-wrap {
+    border: 1px solid grey;
+    border-radius: 10px;
+    background: darkgray;
+    padding: 10px;
+
+}
+.comment-info {
+    border: 1px solid #dc7d7d;
+    border-radius: 10px;
+    padding: 10px;
+    background: #a68080;
+    margin-top: 10px;
+}

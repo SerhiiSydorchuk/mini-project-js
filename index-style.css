@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -6,19 +9,24 @@
 #users-wrap {
      display: flex;
      flex-wrap: wrap;
-     gap: 50px;
-
+    gap: 15px;
+    width: 1440px;
+    margin: 20px auto;
  }
+body{
+    font-family: "SUSE", sans-serif;
+}
  .user {
-     width: 48%;
+     width: 49%;
      display: flex;
      justify-content: center;
      align-items: center;
      flex-direction: column;
-     gap: 20px;
+     gap: 15px;
      border: 2px solid cadetblue;
      border-radius: 20px;
-     padding: 30px 0;
+     padding: 10px 0;
+
      background: #d4dfe1;
  }
  .btn-user-info {

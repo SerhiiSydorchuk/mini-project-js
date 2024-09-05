@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "SUSE", sans-serif;
+}
+
+#user-info {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid dodgerblue;
+    background: lightskyblue;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+#user-info p {
+    margin-top: 5px;
+}
+.user-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+}
+
+h3 {
+    width: 100%;
+    text-align: center;
+}
+#user-wrap {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    gap: 10px;
+
+
+}
+#btn {
+    width: 90%;
+    padding: 15px 0;
+    border-radius: 5px;
+    border: 1px solid #143473;
+    background: cornflowerblue;
+    margin-top: 20px;
+
+   }
+.button {
+    display: flex;
+    justify-content: center;
+
+}
+.post-btn {
+    padding: 1px 10px;
+    border-radius: 5px;
+    border: 1px solid #143473;
+    background: cornflowerblue;
+}
+#titleClick {
+    display: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 90%;
+}
+.user-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+    width: 19%;
+    height: 120px;
+    border-radius: 5px;
+    border: 1px solid #0c9a93;
+    text-align: center;
+    padding: 10px;
+    background: #d3f3f0;
+
+}
