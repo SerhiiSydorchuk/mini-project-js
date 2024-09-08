@@ -1,5 +1,4 @@
-const urlParams = new URLSearchParams(window.location.search);
-const postId = urlParams.get('id');
+const postId = new URLSearchParams(window.location.search).get('id');
 console.log(postId);
 let postsDiv = document.getElementById('post');
 const toUpFirstLetter = (msg)=>{
@@ -11,7 +10,15 @@ const toUpFirstLetter = (msg)=>{
 
 }
 
-const deleteSlash = msg => msg.replaceAll(/\n/g, ' ')
+const deleteSlash = msg => {
+    if (typeof msg === 'string') {
+         const newMsg=msg.charAt(0).toUpperCase() + msg.slice(1)
+        return newMsg.replaceAll(/\n/g, ' ')
+    }else {
+        return msg;
+    }
+
+}
 
 async function addUserPost (idPost){
     try {
@@ -24,7 +31,7 @@ async function addUserPost (idPost){
             for (const postKey in post) {
                 if (postKey ==='body'){
                     const p = document.createElement('p')
-                    p.innerText = `${toUpFirstLetter(postKey)}: ${toUpFirstLetter(deleteSlash(post[postKey]))}`;
+                    p.innerText = `${toUpFirstLetter(postKey)}: ${deleteSlash(post[postKey])}`;
                     divPost.appendChild(p);}else {
                 const p = document.createElement('p')
                 p.innerText = `${toUpFirstLetter(postKey)}: ${toUpFirstLetter(post[postKey])}`
@@ -39,7 +46,7 @@ async function addUserPost (idPost){
             for (const commentKey in comment) {
                 if (commentKey ==='body'){
                     const p = document.createElement('p')
-                    p.innerText = `${toUpFirstLetter(commentKey)}: ${toUpFirstLetter(deleteSlash(comment[commentKey]))}`;
+                    p.innerText = `${toUpFirstLetter(commentKey)}: ${deleteSlash(comment[commentKey])}`;
                     divInfo.appendChild(p);}
                 else {
                     const p = document.createElement('p')

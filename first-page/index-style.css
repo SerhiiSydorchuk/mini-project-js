@@ -9,7 +9,7 @@
 #users-wrap {
      display: flex;
      flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
     width: 1440px;
     margin: 20px auto;
  }

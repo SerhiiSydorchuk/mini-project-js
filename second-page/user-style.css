@@ -44,11 +44,11 @@ h3 {
 }
 #btn {
     width: 90%;
-    padding: 15px 0;
+    padding: 10px 0;
     border-radius: 5px;
     border: 1px solid #143473;
     background: cornflowerblue;
-    margin-top: 20px;
+    margin-top: 10px;
 
    }
 .button {
@@ -76,7 +76,7 @@ h3 {
     justify-content: space-between;
     gap: 5px;
     width: 19%;
-    height: 120px;
+    height: 100px;
     border-radius: 5px;
     border: 1px solid #0c9a93;
     text-align: center;

@@ -1,6 +1,5 @@
 
-const urlParams = new URLSearchParams(window.location.search);
-const userId = urlParams.get('id');
+const userId = new URLSearchParams(window.location.search).get('id');
 console.log(userId);
 const btnPost = document.getElementById('btn');
 const divUsers = document.getElementById('user-info');
@@ -51,7 +50,8 @@ async function addUserInfo (idUser){
             btn.classList.add('post-btn');
             btn.innerText = `Info about post ${post.id}`.toUpperCase();
             btn.onclick = function (){
-                window.location.href = `post-details.html?id=${post.id}`;
+               location.href = `../third-page/post-details.html?id=${post.id}`;
+
             }
             const divTitle = document.createElement('div')
             const h5 = document.createElement('h5');
