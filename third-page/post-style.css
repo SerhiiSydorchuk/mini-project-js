@@ -10,9 +10,16 @@ body{
 
 }
 .comment-info {
+    width: 23%;
     border: 1px solid #dc7d7d;
     border-radius: 10px;
     padding: 10px;
     background: #a68080;
     margin-top: 10px;
+}
+.comments-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
 }

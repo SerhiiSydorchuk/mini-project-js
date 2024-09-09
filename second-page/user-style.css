@@ -84,8 +84,15 @@ h3 {
     background: cornflowerblue;
 }
 .post-btn:hover{
-
+    color: #d3f3f0;
+    background: dodgerblue;
 }
+.post-btn:active {
+    color: black;
+
+    background: cornflowerblue
+}
+
 #titleClick {
     display: none;
     flex-wrap: wrap;
