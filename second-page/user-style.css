@@ -42,25 +42,49 @@ h3 {
 
 
 }
-#btn {
+#btn , #btn-return{
     width: 90%;
     padding: 10px 0;
     border-radius: 5px;
     border: 1px solid #143473;
     background: cornflowerblue;
     margin-top: 10px;
-
    }
+ #btn-return:hover {
+    color: #d3f3f0;
+    font-weight: 700;
+    background: dodgerblue;
+}
+ #btn-return:active {
+    color: black;
+    font-weight: 700;
+    background: cornflowerblue
+}
+#btn:hover {
+    color: #d3f3f0;
+    font-weight: 700;
+    background: dodgerblue;
+}
+#btn:active {
+    color: black;
+    font-weight: 700;
+    background: cornflowerblue
+}
 .button {
     display: flex;
-    justify-content: center;
-
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
 }
+
 .post-btn {
     padding: 1px 10px;
     border-radius: 5px;
     border: 1px solid #143473;
     background: cornflowerblue;
+}
+.post-btn:hover{
+
 }
 #titleClick {
     display: none;
