@@ -44,11 +44,11 @@ h3 {
 }
 #btn , #btn-return{
     width: 90%;
-    padding: 10px 0;
+    padding: 2px 0;
     border-radius: 5px;
     border: 1px solid #143473;
     background: cornflowerblue;
-    margin-top: 10px;
+    margin-top: 5px;
    }
  #btn-return:hover {
     color: #d3f3f0;
